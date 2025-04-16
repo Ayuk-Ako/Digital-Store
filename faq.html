@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store - Frequently Asked Questions</title>
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+    
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom styles */
+        .faq-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .faq-question {
+            transition: background-color 0.3s ease;
+        }
+        .faq-item.active .faq-question {
+            background-color: #f0f7ff;
+        }
+        .faq-answer {
+            max-height: 0;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .search-box:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        .category-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center animate__animated animate__fadeInLeft">
+                <img alt="Digital Store Logo" class="h-10 transform hover:scale-110 transition-transform duration-300" height="50" src="https://storage.googleapis.com/a1aa/image/OqWzJFVjbJR7hGod_v_XyvD4yKZBCJ9zb_3upRaaC48.jpg" width="50"/>
+                <span class="ml-2 text-xl font-bold gradient-text">
+                    DIGITAL STORE
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-6 animate__animated animate__fadeInDown">
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="index.html">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="channels.html">
+                    Channels
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="faq.html">
+                    FAQ
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="tutorials.html">
+                    Tutorials
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="#contact">
+                    Contact US
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 btn-hover-effect animate__animated animate__fadeInRight animate-pulse-cta" href="https://wa.me/237651644490" target="_blank">
+    <i class="fab fa-whatsapp mr-2"></i> WhatsApp US
+</a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-blue-800 px-4 py-2" id="mobile-menu">
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="index.html">Home</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="channels.html">Channels</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="faq.html">FAQ</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="tutorials.html">Tutorials</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="contact.html">Contact US</a>
+        </div>
+    </header>
+
+    <!-- FAQ Hero Section -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20">
+        <div class="container mx-auto px-6 text-center animate__animated animate__fadeIn">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Find answers to common questions about Digital Store IPTV service</p>
+            
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" placeholder="Search FAQs..." 
+                    class="w-full py-4 px-6 rounded-full text-gray-800 focus:outline-none shadow-lg search-box">
+                <button class="absolute right-2 top-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="container mx-auto px-6 overflow-x-auto">
+            <div class="flex space-x-2 min-w-max">
+                <button class="category-btn active px-6 py-2 rounded-full bg-blue-500 text-white transition">
+                    All Questions
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-tv mr-2"></i> Setup
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-money-bill-wave mr-2"></i> Billing
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-wifi mr-2"></i> Connection
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-shield-alt mr-2"></i> Security
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-cog mr-2"></i> Technical
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-user mr-2"></i> Account
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- General Questions -->
+                <div class="mb-12 animate__animated animate__fadeIn">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">General Questions</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">What is Digital Store IPTV?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>Digital Store IPTV is a premium internet television service that delivers live TV channels and on-demand content over the internet. Unlike traditional cable or satellite TV, our service streams content directly to your device through an internet connection, giving you access to thousands of channels from around the world.</p>
+                                    <p class="mt-3">Our service works on various devices including Smart TVs, smartphones, tablets, computers, and streaming devices like Firestick and Android boxes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">What channels do you offer?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>We offer over 20,000 live TV channels from countries all around the world, including:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <li>All major US networks (ABC, CBS, NBC, Fox, etc.)</li>
+                                        <li>Premium sports channels (ESPN, Sky Sports, beIN Sports, etc.)</li>
+                                        <li>Movie channels (HBO, Cinemax, Showtime, etc.)</li>
+                                        <li>News channels (CNN, BBC, Fox News, Al Jazeera, etc.)</li>
+                                        <li>International channels from UK, Canada, Europe, Middle East, Asia, and more</li>
+                                    </ul>
+                                    <p class="mt-3">You can browse our full <a href="channels.html" class="text-blue-500 hover:underline">channel list</a> to see everything we offer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">Do you offer a free trial?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>We currently don't offer free trials due to abuse, but we provide a 7-day money-back guarantee. If you're not completely satisfied with our service within the first week of your subscription, we'll refund your payment in full, no questions asked.</p>
+                                    <p class="mt-3">This gives you plenty of time to test our service quality, channel selection, and features without any risk.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Setup & Installation -->
+                <div class="mb-12 animate__animated animate__fadeIn">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Setup & Installation</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">What devices are supported?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>Digital Store IPTV works with virtually all modern devices including:</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>Smart TVs (Samsung, LG, Android TV)</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>Streaming devices (Fire TV Stick, Android Box, Apple TV)</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>Mobile devices (Android phones/tablets, iPhone, iPad)</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>Computers (Windows, Mac, Linux via web browser)</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>IPTV boxes (MAG, Formuler, BuzzTV)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">How do I set up Digital Store on my device?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>Setup is quick and easy:</p>
+                                    <ol class="list-decimal pl-5 mt-2 space-y-2">
+                                        <li>Purchase your subscription</li>
+                                        <li>Receive login details via email (usually within minutes)</li>
+                                        <li>Download our app or use a compatible media player</li>
+                                        <li>Enter your credentials when prompted</li>
+                                        <li>Start streaming your favorite channels!</li>
+                                    </ol>
+                                    <p class="mt-3">We provide detailed <a href="/tutorials" class="text-blue-500 hover:underline">setup guides</a> for all supported devices with step-by-step instructions and screenshots.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 6 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">What internet speed do I need?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>We recommend the following minimum internet speeds for optimal streaming:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <li><strong>SD Quality:</strong> 10 Mbps</li>
+                                        <li><strong>HD Quality:</strong> 25 Mbps</li>
+                                        <li><strong>4K Quality:</strong> 50+ Mbps</li>
+                                    </ul>
+                                    <p class="mt-3">For best performance:</p>
+                                    <ul class="list-disc pl-5 mt-1 space-y-1">
+                                        <li>Use a wired Ethernet connection when possible</li>
+                                        <li>Close other bandwidth-intensive applications</li>
+                                        <li>Restart your router periodically</li>
+                                        <li>If using WiFi, position your device close to the router</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Billing & Subscription -->
+                <div class="mb-12 animate__animated animate__fadeIn">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Billing & Subscription</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- FAQ Item 7 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">What payment methods do you accept?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>We accept various secure payment methods including:</p>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
+                                        <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                                            <i class="fab fa-cc-visa text-3xl text-blue-800 mb-1"></i>
+                                            <span class="text-sm">Visa</span>
+                                        </div>
+                                        <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                                            <i class="fab fa-cc-mastercard text-3xl text-red-600 mb-1"></i>
+                                            <span class="text-sm">Mastercard</span>
+                                        </div>
+                                        <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                                            <i class="fab fa-cc-paypal text-3xl text-blue-500 mb-1"></i>
+                                            <span class="text-sm">PayPal</span>
+                                        </div>
+                                        <div class="flex flex-col items-center p-3 bg-gray-50 rounded-lg">
+                                            <i class="fab fa-bitcoin text-3xl text-orange-500 mb-1"></i>
+                                            <span class="text-sm">Bitcoin</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3">All payments are processed securely through encrypted connections. We don't store your payment details on our servers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 8 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">How does subscription renewal work?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>Subscription renewals work as follows:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li><strong>Auto-Renewal:</strong> If you choose this option during checkout, your subscription will automatically renew at the end of your billing period using the same payment method.</li>
+                                        <li><strong>Manual Renewal:</strong> If you disable auto-renewal, you'll need to manually renew your subscription before it expires to avoid service interruption.</li>
+                                        <li><strong>Notifications:</strong> We send email reminders 7 days and 1 day before your subscription expires.</li>
+                                    </ul>
+                                    <p class="mt-3">You can manage your renewal preferences at any time in your account settings.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 9 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">Can I get a refund?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>We offer a 7-day money-back guarantee for new subscriptions. If you're not satisfied with our service within the first 7 days, you can request a full refund.</p>
+                                    <p class="mt-3"><strong>Refund conditions:</strong></p>
+                                    <ul class="list-disc pl-5 mt-1 space-y-1">
+                                        <li>Refund requests must be made within 7 days of initial purchase</li>
+                                        <li>Only the first subscription payment is eligible</li>
+                                        <li>Renewals and additional connections are non-refundable</li>
+                                    </ul>
+                                    <p class="mt-3">To request a refund, please contact our support team with your order details.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Support -->
+                <div class="animate__animated animate__fadeIn">
+                    <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Technical Support</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- FAQ Item 10 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">Why is my stream buffering?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>Buffering can occur due to several reasons. Try these troubleshooting steps:</p>
+                                    <ol class="list-decimal pl-5 mt-2 space-y-2">
+                                        <li><strong>Check your internet speed:</strong> Run a speed test (fast.com or speedtest.net) to ensure you meet minimum requirements</li>
+                                        <li><strong>Restart your device and router:</strong> Power cycle your equipment</li>
+                                        <li><strong>Reduce WiFi interference:</strong> Move closer to your router or use Ethernet</li>
+                                        <li><strong>Close other applications:</strong> Bandwidth-heavy apps can affect streaming</li>
+                                        <li><strong>Try a different server:</strong> Our app allows you to switch servers in settings</li>
+                                        <li><strong>Check for updates:</strong> Ensure your app and device software are up-to-date</li>
+                                    </ol>
+                                    <p class="mt-3">If problems persist, contact our support team with details about when buffering occurs and which channels are affected.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 11 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">How do I update the channel list?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>Our channel list updates automatically in most cases. If you need to manually update:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <li><strong>In our app:</strong> Go to Settings > Update Channel List</li>
+                                        <li><strong>On third-party players:</strong> Restart your player or reload the playlist</li>
+                                        <li><strong>On MAG/STB devices:</strong> Reboot your device</li>
+                                    </ul>
+                                    <p class="mt-3">We add new channels and update existing ones regularly. Major updates are announced in our newsletter and social media channels.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 12 -->
+                        <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+                            <div class="faq-question p-5 cursor-pointer flex justify-between items-center">
+                                <h3 class="font-bold text-lg">How can I contact support?</h3>
+                                <i class="fas fa-chevron-down faq-icon text-blue-500"></i>
+                            </div>
+                            <div class="faq-answer px-5">
+                                <div class="pb-5 text-gray-700">
+                                    <p>We offer 24/7 support through multiple channels:</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                        <div class="bg-blue-50 p-4 rounded-lg">
+                                            <div class="flex items-center mb-2">
+                                                <i class="fab fa-whatsapp text-green-500 text-xl mr-3"></i>
+                                                <h4 class="font-bold">WhatsApp</h4>
+                                            </div>
+                                            <p>+1 (555) 123-4567<br>Fastest response time</p>
+                                        </div>
+                                        <div class="bg-blue-50 p-4 rounded-lg">
+                                            <div class="flex items-center mb-2">
+                                                <i class="fas fa-envelope text-blue-500 text-xl mr-3"></i>
+                                                <h4 class="font-bold">Email</h4>
+                                            </div>
+                                            <p>support@digital</p>                                       
+                                                 </div>
+                                            </div>
+                                            <p class="mt-3">For the best support experience, please include your account email and details about your issue when contacting us.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Still Have Questions Section -->
+            <section class="py-16 bg-blue-50">
+                <div class="container mx-auto px-6 text-center">
+                    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-8 animate__animated animate__fadeIn">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">Still have questions?</h2>
+                        <p class="text-lg mb-6">Can't find what you're looking for? Our support team is ready to help you 24/7.</p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="/contact" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition">
+                                <i class="fas fa-headset mr-2"></i> Contact Support
+                            </a>
+                            <a href="/tutorials" class="bg-white border border-blue-500 text-blue-500 hover:bg-blue-50 font-bold py-3 px-6 rounded-full transition">
+                                <i class="fas fa-book mr-2"></i> View Tutorials
+                            </a>
+                        </div>
+                        <div class="flex justify-center gap-4 mt-6">
+                            <button id="print-faq" class="flex items-center text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-print mr-2"></i> Print FAQ
+                            </button>
+                            <button id="share-faq" class="flex items-center text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-share-alt mr-2"></i> Share FAQ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <p class="mb-4">Premium IPTV service with 20,000+ channels and 40,000+ VODs. The best streaming experience at an affordable price.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="#channels" class="hover:text-blue-300 transition-colors duration-300">Channels</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-300 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-blue-300 transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/contact.html" class="hover:text-blue-300 transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="/tutorials.html" class="hover:text-blue-300 transition-colors duration-300">Setup Guides</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-blue-300"></i>
+                            <span>ayukblaisius@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2 text-blue-300"></i>
+                            <span>N/A</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-2 text-blue-300"></i>
+                            <span>24/7 Support Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>© 2025 Digital Store. All rights reserved. Powered by Digital Store</p>
+                <p class="text-sm text-blue-300 mt-2">Disclaimer: Digital Store is not responsible for any copyright issues. All content is provided by third parties.</p>
+            </div>
+        </div>
+    </footer>
+        
+            <script>
+                // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+                // FAQ accordion functionality
+                document.querySelectorAll('.faq-question').forEach(question => {
+                    question.addEventListener('click', () => {
+                        const faqItem = question.parentElement;
+                        faqItem.classList.toggle('active');
+                    });
+                });
+        
+                // Category filter
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelector('.category-btn.active').classList.remove('active', 'bg-blue-500', 'text-white');
+                        document.querySelector('.category-btn.active').classList.add('bg-gray-100', 'hover:bg-gray-200');
+                        btn.classList.add('active', 'bg-blue-500', 'text-white');
+                        btn.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+                        
+                        // Filter FAQs by category
+                        const category = btn.textContent.trim().toLowerCase();
+                        const faqItems = document.querySelectorAll('.faq-item');
+                        
+                        faqItems.forEach(item => {
+                            if (category === 'all questions' || 
+                                item.querySelector('.faq-question h3').textContent.toLowerCase().includes(category) ||
+                                item.querySelector('.faq-answer').textContent.toLowerCase().includes(category)) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+        
+                // Enhanced FAQ search functionality
+                const searchBox = document.querySelector('.search-box');
+                searchBox.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const faqItems = document.querySelectorAll('.faq-item');
+                    let hasResults = false;
+                    
+                    faqItems.forEach(item => {
+                        const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                        
+                        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                            item.style.display = 'block';
+                            hasResults = true;
+                            
+                            // Highlight matching text
+                            const questionText = item.querySelector('.faq-question h3');
+                            const answerText = item.querySelector('.faq-answer');
+                            
+                            // Remove previous highlights
+                            questionText.innerHTML = questionText.textContent;
+                            answerText.innerHTML = answerText.textContent;
+                            
+                            // Add new highlights
+                            if (searchTerm.length > 2) {
+                                highlightText(questionText, searchTerm);
+                                highlightText(answerText, searchTerm);
+                            }
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show no results message if needed
+                    const noResults = document.getElementById('no-results');
+                    if (!hasResults && searchTerm.length > 0) {
+                        if (!noResults) {
+                            const noResultsDiv = document.createElement('div');
+                            noResultsDiv.id = 'no-results';
+                            noResultsDiv.className = 'text-center py-8 text-gray-500';
+                            noResultsDiv.innerHTML = `
+                                <i class="fas fa-search fa-3x mb-4 opacity-50"></i>
+                                <h3 class="text-xl font-medium">No results found</h3>
+                                <p>Try different keywords or contact our support team</p>
+                            `;
+                            document.querySelector('.space-y-4').appendChild(noResultsDiv);
+                        }
+                    } else if (noResults) {
+                        noResults.remove();
+                    }
+                });
+                
+                function highlightText(element, term) {
+                    const text = element.textContent;
+                    const regex = new RegExp(term, 'gi');
+                    const highlighted = text.replace(regex, match => 
+                        `<span class="bg-yellow-200 text-gray-900 px-1 rounded">${match}</span>`
+                    );
+                    element.innerHTML = highlighted;
+                }
+        
+                // Print FAQ functionality
+                document.getElementById('print-faq').addEventListener('click', function() {
+                    window.print();
+                });
+        
+                // Share FAQ functionality
+                document.getElementById('share-faq').addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Digital Store FAQ',
+                            text: 'Check out these frequently asked questions about Digital Store IPTV',
+                            url: window.location.href
+                        }).catch(err => {
+                            console.log('Error sharing:', err);
+                        });
+                    } else {
+                        // Fallback for browsers that don't support Web Share API
+                        const shareUrl = `mailto:?subject=Digital%20Store%20FAQ&body=Check%20out%20these%20FAQs:%20${encodeURIComponent(window.location.href)}`;
+                        window.location.href = shareUrl;
+                    }
+                });
+        
+                // Animate elements on scroll
+                const animateOnScroll = () => {
+                    const elements = document.querySelectorAll('.animate__animated');
+                    
+                    elements.forEach(element => {
+                        const elementTop = element.getBoundingClientRect().top;
+                        const elementVisible = 150;
+                        
+                        if (elementTop < window.innerHeight - elementVisible) {
+                            element.classList.add(element.getAttribute('class').split(' ')[1]);
+                        }
+                    });
+                };
+        
+                window.addEventListener('scroll', animateOnScroll);
+                window.addEventListener('load', animateOnScroll);
+            </script>
+        </body>
+        </html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Digital Store</title>
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+    
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .form-section {
+            transition: all 0.3s ease;
+        }
+        .input-highlight {
+            transition: all 0.3s ease;
+        }
+        .input-highlight:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        .payment-btn {
+            transition: all 0.3s ease;
+        }
+        .payment-btn.active {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .payment-btn:hover:not(.active) {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center animate__animated animate__fadeInLeft">
+                <img alt="Digital Store Logo" class="h-10 transform hover:scale-110 transition-transform duration-300" height="50" src="https://storage.googleapis.com/a1aa/image/OqWzJFVjbJR7hGod_v_XyvD4yKZBCJ9zb_3upRaaC48.jpg" width="50"/>
+                <span class="ml-2 text-xl font-bold gradient-text">
+                    DIGITAL STORE
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-6 animate__animated animate__fadeInDown">
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="index.html">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="channels.html">
+                    Channels
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="faq.html">
+                    FAQ
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="tutorials.html">
+                    Tutorials
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="contact.html">
+                    Contact US
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 btn-hover-effect animate__animated animate__fadeInRight animate-pulse-cta" href="https://wa.me/237651644490" target="_blank">
+    <i class="fab fa-whatsapp mr-2"></i> WhatsApp US
+</a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-blue-800 px-4 py-2" id="mobile-menu">
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="index.html">Home</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="channels.html">Channels</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="faq.html">FAQ</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="tutorials.html">Tutorials</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="contact.html">Contact US</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <!-- Progress Steps -->
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex justify-between">
+                    <div class="text-center">
+                        <div class="w-8 h-8 mx-auto bg-blue-500 text-white rounded-full flex items-center justify-center">1</div>
+                        <p class="mt-2 text-sm font-medium text-blue-600">Order Details</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-8 h-8 mx-auto bg-gray-200 text-gray-600 rounded-full flex items-center justify-center">2</div>
+                        <p class="mt-2 text-sm font-medium text-gray-500">Payment</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-8 h-8 mx-auto bg-gray-200 text-gray-600 rounded-full flex items-center justify-center">3</div>
+                        <p class="mt-2 text-sm font-medium text-gray-500">Confirmation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <form id="orderForm" class="p-6 space-y-6">
+                <!-- Service Type -->
+                <div class="form-section">
+                    <label class="block text-lg font-medium text-gray-700 mb-2">
+                        Type of service <span class="text-red-500">*</span>
+                    </label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                            <input type="radio" name="service_type" value="new" class="h-5 w-5 text-blue-600" checked>
+                            <span class="ml-3 block">
+                                <span class="font-medium">New subscription</span>
+                                <span class="text-gray-500 text-sm block">I'm a new customer</span>
+                            </span>
+                        </label>
+                        <label id="renewLabel" class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                            <input type="radio" name="service_type" value="renew" class="h-5 w-5 text-blue-600" onclick="toggleUsernameBox(true)">
+                            <span class="ml-3 block">
+                                <span class="font-medium">Renew subscription</span>
+                                <span class="text-gray-500 text-sm block">I'm an existing customer</span>
+                            </span>
+                        </label>
+                        
+                        <!-- Username input field (initially hidden) -->
+                        <div id="usernameBox" class="mt-2 hidden">
+                            <input type="text" name="old_username" placeholder="Enter your old username"
+                                class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subscription Plan -->
+                <div class="form-section">
+                    <label class="block text-lg font-medium text-gray-700 mb-2">
+                        Subscription plan <span class="text-red-500">*</span>
+                    </label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <label class="flex flex-col p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                            <input type="radio" name="subscription_plan" value="1" class="h-5 w-5 text-blue-600">
+                            <span class="mt-2 block text-center">
+                                <span class="font-medium">1 Month</span>
+                                <span class="block text-blue-600 font-bold">$20.00</span>
+                            </span>
+                        </label>
+                        <label class="flex flex-col p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                            <input type="radio" name="subscription_plan" value="3" class="h-5 w-5 text-blue-600" checked>
+                            <span class="mt-2 block text-center">
+                                <span class="font-medium">3 Months</span>
+                                <span class="block text-blue-600 font-bold">$50.00</span>
+                                <span class="text-green-600 text-sm">Save $10.00</span>
+                            </span>
+                        </label>
+                        <label class="flex flex-col p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                            <input type="radio" name="subscription_plan" value="6" class="h-5 w-5 text-blue-600">
+                            <span class="mt-2 block text-center">
+                                <span class="font-medium">6 Months</span>
+                                <span class="block text-blue-600 font-bold">$100.00</span>
+                                <span class="text-green-600 text-sm">Save $20.00</span>
+                            </span>
+                        </label>
+                        <label class="flex flex-col p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                            <input type="radio" name="subscription_plan" value="12" class="h-5 w-5 text-blue-600">
+                            <span class="mt-2 block text-center">
+                                <span class="font-medium">12 Months</span>
+                                <span class="block text-blue-600 font-bold">$200.00</span>
+                                <span class="text-green-600 text-sm">Save $40.00</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Device Type -->
+                <div class="form-section">
+                    <label class="block text-lg font-medium text-gray-700 mb-2">
+                        Device type <span class="text-red-500">*</span>
+                    </label>
+                    <select name="device_type" class="w-full p-3 border border-gray-300 rounded-lg input-highlight focus:outline-none">
+                        <option value="">Select your device</option>
+                        <option value="xtreme">Xtreme Code</option>
+                        <option value="m3u">M3U Playlist</option>
+                        <option value="mag">MAG Box</option>
+                        <option value="android">Android Device</option>
+                        <option value="firestick">Fire TV Stick</option>
+                        <option value="smarttv">Smart TV</option>
+                        <option value="ios">iPhone/iPad</option>
+                    </select>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="form-section">
+                    <label class="block text-lg font-medium text-gray-700 mb-2">
+                        Package selection <span class="text-red-500">*</span>
+                    </label>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <input id="full_package" type="radio" name="package" value="full" class="h-5 w-5 text-blue-600" checked>
+                            <label for="full_package" class="ml-3 block">
+                                <span class="font-medium">Full Package</span>
+                                <span class="text-gray-500 text-sm block">All 20,000+ channels and 40,000+ VOD</span>
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="custom_package" type="radio" name="package" value="custom" class="h-5 w-5 text-blue-600">
+                            <label for="custom_package" class="ml-3 block">
+                                <span class="font-medium">Custom Package</span>
+                                <span class="text-gray-500 text-sm block">Select specific countries/channels</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="customPackageOptions" class="mt-4 hidden">
+                        <label class="block text-gray-700 mb-2">Select countries (max 6)</label>
+                        <select multiple name="countries" class="w-full p-3 border border-gray-300 rounded-lg h-32">
+                            <option value="usa">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="canada">Canada</option>
+                            <option value="france">France</option>
+                            <option value="germany">Germany</option>
+                            <option value="spain">Spain</option>
+                            <option value="arab">Arab Countries</option>
+                            <option value="latin">Latin America</option>
+                        </select>
+                        <p class="text-gray-500 text-sm mt-2">For better performance, please don't exceed 6 countries.</p>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h3 class="text-lg font-medium text-gray-700 mb-4">Personal Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="full_name" class="block text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="full_name" name="full_name" class="w-full p-3 border border-gray-300 rounded-lg input-highlight focus:outline-none" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg input-highlight focus:outline-none" placeholder="your@email.com" required>
+                            <p class="text-gray-500 text-sm mt-2">We'll send your subscription details to this email</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="phone" class="block text-gray-700 mb-2">Phone/WhatsApp (Optional)</label>
+                        <div class="flex">
+                            <!-- Country select dropdown -->
+                            <select id="countrySelect" class="p-2 border border-gray-300 rounded-l-lg bg-gray-50 text-sm focus:outline-none">
+                                <option value="+237" data-flag="🇨🇲">🇨🇲 +237 (Cameroon)</option>
+                                <option value="+234" data-flag="🇳🇬">🇳🇬 +234 (Nigeria)</option>
+                                <option value="+1" data-flag="🇺🇸">🇺🇸 +1 (United States)</option>
+    <option value="+44" data-flag="🇬🇧">🇬🇧 +44 (United Kingdom)</option>
+    <option value="+33" data-flag="🇫🇷">🇫🇷 +33 (France)</option>
+    <option value="+49" data-flag="🇩🇪">🇩🇪 +49 (Germany)</option>
+    <option value="+81" data-flag="🇯🇵">🇯🇵 +81 (Japan)</option>
+    <option value="+61" data-flag="🇦🇺">🇦🇺 +61 (Australia)</option>
+    <option value="+86" data-flag="🇨🇳">🇨🇳 +86 (China)</option>
+    <option value="+91" data-flag="🇮🇳">🇮🇳 +91 (India)</option>
+    <option value="+7" data-flag="🇷🇺">🇷🇺 +7 (Russia)</option>
+    <option value="+55" data-flag="🇧🇷">🇧🇷 +55 (Brazil)</option>
+                            </select>
+                    
+                            <!-- Phone number input -->
+                            <input type="tel" id="phone" name="phone" class="flex-1 min-w-0 p-3 border border-gray-300 rounded-r-lg input-highlight focus:outline-none" placeholder="Phone number">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <!-- <div class="form-section">
+                    <h3 class="text-lg font-medium text-gray-700 mb-4">Payment Method <span class="text-red-500">*</span></h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button type="button" class="payment-btn p-3 border border-gray-300 rounded-lg flex flex-col items-center active" data-payment="credit">
+                            <i class="far fa-credit-card text-2xl mb-2"></i>
+                            <span>Credit Card</span>
+                        </button>
+                        <button type="button" class="payment-btn p-3 border border-gray-300 rounded-lg flex flex-col items-center" data-payment="paypal">
+                            <i class="fab fa-paypal text-2xl mb-2"></i>
+                            <span>PayPal</span>
+                        </button>
+                        <button type="button" class="payment-btn p-3 border border-gray-300 rounded-lg flex flex-col items-center" data-payment="crypto">
+                            <i class="fab fa-bitcoin text-2xl mb-2"></i>
+                            <span>Crypto</span>
+                        </button>
+                        <button type="button" class="payment-btn p-3 border border-gray-300 rounded-lg flex flex-col items-center" data-payment="bank">
+                            <i class="fas fa-university text-2xl mb-2"></i>
+                            <span>Bank Transfer</span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="payment_method" value="credit">
+                </div> -->
+
+                <!-- Order Summary -->
+<div class="form-section p-4 border border-gray-300 rounded-lg bg-gray-50">
+    <h3 class="text-lg font-medium text-gray-700 mb-4">Order Summary</h3>
+    <div class="flex justify-between mb-2">
+        <span class="text-gray-600">Service Type:</span>
+        <span class="font-medium" id="summaryService">-</span>
+    </div>
+    <div class="flex justify-between mb-2">
+        <span class="text-gray-600">Subscription:</span>
+        <span class="font-medium" id="summaryPlan">-</span>
+    </div>
+    <div class="flex justify-between mb-2">
+        <span class="text-gray-600">Package:</span>
+        <span class="font-medium" id="summaryPackage">-</span>
+    </div>
+    <div class="flex justify-between mb-2">
+        <span class="text-gray-600">Device:</span>
+        <span class="font-medium" id="summaryDevice">-</span>
+    </div>
+    <div class="border-t border-gray-300 my-3"></div>
+    <div class="flex justify-between text-lg font-bold">
+        <span>Total:</span>
+        <span id="summaryTotal">$0.00</span>
+    </div>
+</div>
+                <!-- Terms and Submit -->
+                <div class="form-section">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms" name="terms" class="h-5 w-5 text-blue-600 mt-1" required>
+                        <label for="terms" class="ml-3 block text-gray-700">
+                            I agree to the <a href="/terms" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="/privacy" class="text-blue-600 hover:underline">Privacy Policy</a> <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                    <!-- Proceed Button -->
+<button 
+type="button" 
+onclick="sendToWhatsApp()" 
+class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center justify-center space-x-2"
+id="proceedButton"
+>
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+</svg>
+<span>Proceed to Payment</span>
+</button>
+
+<script>
+// Add loading state to button
+document.getElementById('proceedButton').addEventListener('click', function() {
+    const button = this;
+    button.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Processing...
+    `;
+    button.disabled = true;
+    
+    // Call the WhatsApp function after a brief delay to show loading state
+    setTimeout(() => {
+        sendToWhatsApp();
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            button.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+                <span>Proceed to Payment</span>
+            `;
+            button.disabled = false;
+        }, 2000);
+    }, 500);
+});
+</script>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <p class="mb-4">Premium IPTV service with 20,000+ channels and 40,000+ VODs. The best streaming experience at an affordable price.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="#channels" class="hover:text-blue-300 transition-colors duration-300">Channels</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-300 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-blue-300 transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/contact.html" class="hover:text-blue-300 transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="/tutorials.html" class="hover:text-blue-300 transition-colors duration-300">Setup Guides</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-blue-300"></i>
+                            <span>ayukblaisius@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2 text-blue-300"></i>
+                            <span>N/A</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-2 text-blue-300"></i>
+                            <span>24/7 Support Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>© 2025 Digital Store. All rights reserved. Powered by Digital Store</p>
+                <p class="text-sm text-blue-300 mt-2">Disclaimer: Digital Store is not responsible for any copyright issues. All content is provided by third parties.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function sendToWhatsApp() {
+            // Replace with your actual WhatsApp number
+            const adminNumber = "237651644490";
+            
+            // Collect personal information
+            const fullName = document.getElementById('full_name').value || "Not provided";
+            const email = document.getElementById('email').value || "Not provided";
+            const countryCode = document.getElementById('countrySelect').value || "";
+            const phone = document.getElementById('phone').value || "Not provided";
+            
+            // Collect service information
+            const serviceType = document.querySelector('input[name="service_type"]:checked')?.value || "Not selected";
+            const oldUsername = document.getElementById("usernameBox").classList.contains("hidden")
+                ? "N/A"
+                : document.querySelector('input[name="old_username"]').value || "Not provided";
+            
+            // Collect subscription details
+            const plan = document.querySelector('input[name="subscription_plan"]:checked');
+            const planText = plan ? 
+                (plan.value === '1' ? '1 Month Plan' :
+                 plan.value === '3' ? '3 Months Plan' :
+                 plan.value === '6' ? '6 Months Plan' : '12 Months Plan') : "Not selected";
+            
+            const package = document.querySelector('input[name="package"]:checked');
+            let packageText = "Not selected";
+            if (package) {
+                if (package.value === 'full') {
+                    packageText = 'Full Package';
+                } else {
+                    const customCountries = document.querySelector('select[name="countries"]');
+                    if (customCountries && customCountries.selectedOptions.length > 0) {
+                        const countries = Array.from(customCountries.selectedOptions)
+                            .map(opt => opt.text)
+                            .join(', ');
+                        packageText = `Custom Package (${countries})`;
+                    } else {
+                        packageText = 'Custom Package (No countries selected)';
+                    }
+                }
+            }
+            
+            const device = document.querySelector('select[name="device_type"]');
+            const deviceText = device && device.value ? device.options[device.selectedIndex].text : "Not selected";
+            
+            const price = plan ? 
+                (plan.value === '1' ? '$20.00' :
+                 plan.value === '3' ? '$50.00' :
+                 plan.value === '6' ? '$100.00' : '$240.00') : "$0.00";
+    
+            // Construct comprehensive message
+            const message = `NEW ORDER REQUEST\n\n` +
+                           `*Personal Information*\n` +
+                           `Name: ${fullName}\n` +
+                           `Email: ${email}\n` +
+                           `Phone/WhatsApp: ${countryCode} ${phone}\n\n` +
+                           `*Service Details*\n` +
+                           `Service Type: ${serviceType}\n` +
+                           `Existing Username: ${oldUsername}\n\n` +
+                           `*Subscription Details*\n` +
+                           `Plan: ${planText}\n` +
+                           `Package: ${packageText}\n` +
+                           `Device: ${deviceText}\n\n` +
+                           `*Order Summary*\n` +
+                           `Total Amount: ${price}\n\n` +
+                           `Please process this order.`;
+    
+            // Encode and send the message
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${adminNumber}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+
+<script>
+    // Update order summary when form changes
+    function updateOrderSummary() {
+        // Get selected values
+        const serviceType = document.querySelector('input[name="service_type"]:checked');
+        const plan = document.querySelector('input[name="subscription_plan"]:checked');
+        const package = document.querySelector('input[name="package"]:checked');
+        const device = document.querySelector('select[name="device_type"]');
+        const customCountries = document.querySelector('select[name="countries"]');
+        
+        // Update service type in summary
+        if (serviceType) {
+            const serviceText = serviceType.value === 'new' ? 'New Subscription' : 'Renew Subscription';
+            document.getElementById('summaryService').textContent = serviceText;
+        } else {
+            document.getElementById('summaryService').textContent = '-';
+        }
+        
+        // Update plan in summary
+        if (plan) {
+            const planText = 
+                plan.value === '1' ? '1 Month Plan' :
+                plan.value === '3' ? '3 Months Plan' :
+                plan.value === '6' ? '6 Months Plan' : '12 Months Plan';
+            document.getElementById('summaryPlan').textContent = planText;
+            
+            const price = 
+                plan.value === '1' ? '$20.00' :
+                plan.value === '3' ? '$50.00' :
+                plan.value === '6' ? '$100.00' : '$240.00';
+            document.getElementById('summaryTotal').textContent = price;
+        } else {
+            document.getElementById('summaryPlan').textContent = '-';
+            document.getElementById('summaryTotal').textContent = '$0.00';
+        }
+        
+        // Update package in summary
+        if (package) {
+            if (package.value === 'full') {
+                document.getElementById('summaryPackage').textContent = 'Full Package';
+            } else if (customCountries && customCountries.selectedOptions.length > 0) {
+                const countries = Array.from(customCountries.selectedOptions)
+                    .map(opt => opt.text)
+                    .join(', ');
+                document.getElementById('summaryPackage').textContent = `Custom (${countries})`;
+            } else {
+                document.getElementById('summaryPackage').textContent = 'Custom Package';
+            }
+        } else {
+            document.getElementById('summaryPackage').textContent = '-';
+        }
+        
+        // Update device in summary
+        if (device && device.value) {
+            document.getElementById('summaryDevice').textContent = device.options[device.selectedIndex].text;
+        } else {
+            document.getElementById('summaryDevice').textContent = '-';
+        }
+    }
+
+    // Toggle custom package options
+    document.getElementById('custom_package').addEventListener('change', function() {
+        const customOptions = document.getElementById('customPackageOptions');
+        customOptions.classList.toggle('hidden', !this.checked);
+        updateOrderSummary();
+    });
+
+    // Update summary when any form element changes
+    document.querySelectorAll('input[name="service_type"], input[name="subscription_plan"], input[name="package"], select[name="device_type"], select[name="countries"]').forEach(el => {
+        el.addEventListener('change', updateOrderSummary);
+    });
+
+    // Initialize summary with empty values
+    updateOrderSummary();
+</script>
+
+    <script>
+        // Hide or show the username box when radio is selected
+        function toggleUsernameBox(show) {
+            const box = document.getElementById('usernameBox');
+            box.classList.toggle('hidden', !show);
+        }
+    
+        // Optional: Hide the username box when other radio options are selected
+        document.querySelectorAll('input[name="service_type"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                toggleUsernameBox(e.target.value === 'renew');
+            });
+        });
+    </script>
+
+<script>
+    const countrySelect = document.getElementById("countrySelect");
+    const phoneInput = document.getElementById("phone");
+
+    // Optionally prefill the input with the country code when changed
+    countrySelect.addEventListener("change", function () {
+        const selectedCode = this.value;
+        // Optional: Set the phone input value to start with the country code
+        phoneInput.value = selectedCode + " ";
+        phoneInput.focus();
+    });
+</script>
+
+    <script>
+        
+
+        // Form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            // For demonstration, we'll just show an alert
+            alert('Order submitted successfully! Redirecting to payment...');
+            // window.location.href = '/payment?plan=' + document.querySelector('input[name="subscription_plan"]:checked').value;
+        });
+
+        // Initialize summary
+        updateOrderSummary();
+    </script>
+</body>
+</html>

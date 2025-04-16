@@ -1,0 +1,1041 @@
+<html>
+<head>
+    <title>Digital Store - Premium IPTV Service</title>
+    <meta name="description" content="Digital Store offers premium IPTV service with 20,000+ channels, 40,000+ VODs, and support for all devices. Enjoy seamless streaming with 4K/FHD quality.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+    
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translateY(30px)'
+                            },
+                            '100%': { 
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e40af;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1e3a8a;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Button hover effect */
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .btn-hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Card hover effect */
+        .card-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Pulse animation for CTA */
+        @keyframes pulse-cta {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+        }
+        .animate-pulse-cta {
+            animation: pulse-cta 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased scroll-smooth">
+    <!-- Header with sticky navigation -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center animate__animated animate__fadeInLeft">
+                <img alt="Digital Store Logo" class="h-10 transform hover:scale-110 transition-transform duration-300" height="50" src="https://storage.googleapis.com/a1aa/image/OqWzJFVjbJR7hGod_v_XyvD4yKZBCJ9zb_3upRaaC48.jpg" width="50"/>
+                <span class="ml-2 text-xl font-bold gradient-text">
+                    DIGITAL STORE
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-6 animate__animated animate__fadeInDown">
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="index.html">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="channels.html">
+                    Channels
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="faq.html">
+                    FAQ
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="tutorials.html">
+                    Tutorials
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="contact.html">
+                    Contact US
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 btn-hover-effect animate__animated animate__fadeInRight animate-pulse-cta" href="https://wa.me/237651644490" target="_blank">
+    <i class="fab fa-whatsapp mr-2"></i> WhatsApp 
+</a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-blue-800 px-4 py-2" id="mobile-menu">
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="index.html">Home</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="channels.html">Channels</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="faq.html">FAQ</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="tutorials.html">Tutorials</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="contact.html">Contact US</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <img alt="Family enjoying IPTV" class="w-full h-screen md:h-auto md:max-h-[600px] object-cover animate__animated animate__fadeIn" height="1080" src="https://storage.googleapis.com/a1aa/image/c6-jJ5b8bcwtYC1W5QE4OwwYh1cNLDIbsPes_Ph7hiE.jpg" width="1920"/>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4 animate__animated animate__fadeIn animate__delay-1s">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-slide-up">Premium IPTV Service for Unlimited Entertainment</h1>
+            <p class="text-2xl md:text-3xl font-bold text-blue-300 mb-6 animate-slide-up animate__delay-1s">ONLY <span class="gradient-text">$59/YEAR</span> WITH Digital Store</p>
+            <p class="text-lg md:text-xl max-w-3xl mb-8 animate-slide-up animate__delay-2s">Enjoy Local News, Live Sports, Weather, Entertainment, PPV, Game Passes, And More On Digital Store – Featuring All Your Favorite Channels.</p>
+            <div class="flex flex-col sm:flex-row gap-4 animate-slide-up animate__delay-3s">
+                <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center btn-hover-effect transition-all duration-300" href="#pricing">
+                    Subscribe Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-all duration-300" href="channels.html">
+                    Explore Channels <i class="fas fa-tv ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating devices animation -->
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center space-x-8 z-20 opacity-0 md:opacity-100 animate__animated animate__fadeInUp animate__delay-3s">
+            <img src="https://storage.googleapis.com/a1aa/image/evCXrCPwoJKBuAOqt7G2ZDC8_Qo6wfg5zDHXffTIL08.jpg" alt="Mobile" class="w-16 h-16 object-contain animate-float" style="animation-delay: 0.2s">
+            <img src="https://storage.googleapis.com/a1aa/image/wTKlG62AXkLfRaZG6wVu_5mnqpblt3s0Bw8IHguNO1c.jpg" alt="Fire TV" class="w-16 h-16 object-contain animate-float" style="animation-delay: 0.4s">
+            <img src="https://storage.googleapis.com/a1aa/image/Wsj_CP4-ZJKpWzJdCzagsHm132c-Ju0Y4Pmtl7s8BkA.jpg" alt="Smart TV" class="w-16 h-16 object-contain animate-float" style="animation-delay: 0.6s">
+            <img src="https://storage.googleapis.com/a1aa/image/R6BebmPPKSz8kDMKAxGraF2HO7cTM5Ur1a9oHfKbSE0.jpg" alt="Laptop" class="w-16 h-16 object-contain animate-float" style="animation-delay: 0.8s">
+        </div>
+    </main>
+
+    <!-- Devices Section -->
+    <section class="py-16 bg-gradient-to-b from-blue-50 to-white" id="devices">
+        <div class="container mx-auto px-4 animate__animated animate__fadeIn">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4 text-center">
+                Watch Digital Store On <span class="gradient-text">Any Device</span>
+            </h1>
+            <p class="text-xl text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+                No Matter What Device You Have. Digital Store Premium Subscription Supports All Major Platforms and Devices.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover-effect transform transition-all duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Smart TVs</h3>
+                    <p class="text-gray-700">Samsung, LG, Sony, and all Android TVs with our easy-to-use app.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover-effect transform transition-all duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mobile Devices</h3>
+                    <p class="text-gray-700">iPhone, iPad, Android phones and tablets - watch anywhere.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover-effect transform transition-all duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Computers</h3>
+                    <p class="text-gray-700">Windows, Mac, Linux - stream directly in your browser.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover-effect transform transition-all duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Streaming Devices</h3>
+                    <p class="text-gray-700">Fire TV Stick, Android Box, Apple TV, Roku, and more.</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mb-8">
+                <a class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full inline-flex items-center btn-hover-effect transition-all duration-300" href="#">
+                    Join Digital Store Now <i class="fas fa-paper-plane ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Device logos -->
+            <div class="flex flex-wrap justify-center gap-6 mt-8 animate__animated animate__fadeIn">
+                <div class="flex flex-col items-center">
+                    <img alt="Fire TV Stick logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/7eXoMfKlg7nYqoAm9gTImWJHACdnhoWFFVFytXV7bko.jpg"/>
+                    <span class="mt-2 text-sm">Fire TV</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Samsung Smart TV logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/vZ3GY52msjpuxRX-ODDGRJe_HnX445cVf44oALkN1SE.jpg"/>
+                    <span class="mt-2 text-sm">Samsung</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Android logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/HpUwhaM0-V9jPWfdWYhxl0aZ4YL43Z1Z0Oe-iYmcP9c.jpg"/>
+                    <span class="mt-2 text-sm">Android</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Apple logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/ZnUvOEtbV4F6cYh_nAN3Yz3YzSKasXrsmKpu3QkCUV0.jpg"/>
+                    <span class="mt-2 text-sm">Apple</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Roku logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/4fLrgL4PBcq8KhIRRB3mmf3U5XUP4z6TSqSmlibhPJA.jpg"/>
+                    <span class="mt-2 text-sm">Roku</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Windows logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/hsuQALAV7tGDWMxWoWBCfU-Zvtvx6VSNn34njse_a8k.jpg"/>
+                    <span class="mt-2 text-sm">Windows</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="LG Smart TV logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/7emTUKujkyx4y45SxTN8-QJgDBYUN18cKWSipw-L11w.jpg"/>
+                    <span class="mt-2 text-sm">LG</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Infomir logo" class="w-16 h-16 object-contain" src="https://storage.googleapis.com/a1aa/image/9aO6yF3LbANL0wQZu3PcEJQAC2TAKbClHHcQCbNKXU8.jpg"/>
+                    <span class="mt-2 text-sm">Infomir</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-blue-900 text-white py-16 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-blue-400 animate-pulse-slow"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-blue-300 animate-pulse-slow" style="animation-delay: 1s"></div>
+            <div class="absolute top-1/2 left-1/4 w-32 h-32 rounded-full bg-blue-500 animate-pulse-slow" style="animation-delay: 2s"></div>
+        </div>
+        
+        <div class="container mx-auto text-center relative z-10">
+            <h2 class="text-lg font-semibold mb-2 text-blue-300 animate__animated animate__fadeIn">Why Choose Digital Store?</h2>
+            <h1 class="text-3xl font-bold mb-12 animate__animated animate__fadeIn">The Fastest & Most Reliable IPTV Service</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+                <div class="flex flex-col items-center bg-blue-800/50 p-6 rounded-xl backdrop-blur-sm card-hover-effect animate__animated animate__fadeInUp" data-animate-order="1">
+                    <div class="text-4xl mb-4 text-blue-300">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">NO FREEZING</h3>
+                    <p class="text-center">Watch shows without stops or freezes thanks to our advanced streaming technology and optimized servers.</p>
+                </div>
+                
+                <div class="flex flex-col items-center bg-blue-800/50 p-6 rounded-xl backdrop-blur-sm card-hover-effect animate__animated animate__fadeInUp" data-animate-order="2">
+                    <div class="text-4xl mb-4 text-blue-300">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">QUICK SETUP</h3>
+                    <p class="text-center">Get your TV service activated instantly, typically within minutes of your purchase.</p>
+                </div>
+                
+                <div class="flex flex-col items-center bg-blue-800/50 p-6 rounded-xl backdrop-blur-sm card-hover-effect animate__animated animate__fadeInUp" data-animate-order="3">
+                    <div class="text-4xl mb-4 text-blue-300">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">VAST CONTENT</h3>
+                    <p class="text-center">20,000+ channels from the UK, USA, Canada, Europe, Middle East, and more.</p>
+                </div>
+                
+                <div class="flex flex-col items-center bg-blue-800/50 p-6 rounded-xl backdrop-blur-sm card-hover-effect animate__animated animate__fadeInUp" data-animate-order="4">
+                    <div class="text-4xl mb-4 text-blue-300">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">24/7 SUPPORT</h3>
+                    <p class="text-center">Our dedicated team is available around the clock to assist with any questions or issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-white py-16" id="pricing">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2 animate__animated animate__fadeIn">Flexible Subscription Plans</h2>
+            <h1 class="text-4xl font-bold text-blue-900 mb-12 animate__animated animate__fadeIn">Choose Your Perfect Plan</h1>
+            
+            <div class="flex flex-wrap justify-center max-w-6xl mx-auto">
+                <!-- 1 Month Plan -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 p-4 animate__animated animate__fadeInLeft" data-animate-order="1">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 card-hover-effect h-full">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center py-4">
+                            <h2 class="text-xl font-bold">1 MONTH</h2>
+                            <p class="text-sm">Digital Store Premium</p>
+                            <p class="text-sm">Free Trial available (4 Hours)</p>
+                        </div>
+                        <div class="text-center py-6 px-4">
+                            <p class="text-4xl font-bold text-blue-600">$20</p>
+                            <!-- <p class="line-through text-gray-500 text-sm">$5</p> -->
+                            <p class="text-gray-600 text-sm mt-2">Save $0</p>
+                        </div>
+                        <ul class="text-left px-6 pb-6">
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>20,000+ Channels</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>40,000+ VODs</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>4K/FHD/HD Quality</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>TV Guide (EPG)</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Anti-Freeze Tech</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Instant Activation</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>24/7 Support</li>
+                        </ul>
+                        <div class="text-center pb-6 px-4">
+                            <a href="order.html"><button class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-full w-full transition-all duration-300 btn-hover-effect">
+                                Get Started
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3 Months Plan -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 p-4 animate__animated animate__fadeInLeft" data-animate-order="2">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 card-hover-effect h-full">
+                        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4">
+                            <h2 class="text-xl font-bold">3 MONTHS</h2>
+                            <p class="text-sm">Digital Store Premium</p>
+                            <p class="text-sm">Free Trial available (4 Hours)</p>
+                        </div>
+                        <div class="text-center py-6 px-4">
+                            <p class="text-4xl font-bold text-blue-600">$50</p>
+                            <!-- <p class="line-through text-gray-500 text-sm">$45</p> -->
+                            <p class="text-gray-600 text-sm mt-2">Save $10</p>
+                        </div>
+                        <ul class="text-left px-6 pb-6">
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>20,000+ Channels</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>40,000+ VODs</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>4K/FHD/HD Quality</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>TV Guide (EPG)</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Anti-Freeze Tech</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Instant Activation</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>24/7 Support</li>
+                        </ul>
+                        <div class="text-center pb-6 px-4">
+                            <a href="order.html"><button class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-full w-full transition-all duration-300 btn-hover-effect">
+                                Most Popular
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 6 Months Plan -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 p-4 animate__animated animate__fadeInRight" data-animate-order="3">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 card-hover-effect h-full">
+                        <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-white text-center py-4">
+                            <h2 class="text-xl font-bold">6 MONTHS</h2>
+                            <p class="text-sm">Digital Store Premium</p>
+                            <p class="text-sm">Free Trial available (4 Hours)</p>
+                        </div>
+                        <div class="text-center py-6 px-4">
+                            <p class="text-4xl font-bold text-blue-600">$100</p>
+                            <!-- <p class="line-through text-gray-500 text-sm">$60</p> -->
+                            <p class="text-gray-600 text-sm mt-2">Save $20</p>
+                        </div>
+                        <ul class="text-left px-6 pb-6">
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>20,000+ Channels</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>40,000+ VODs</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>4K/FHD/HD Quality</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>TV Guide (EPG)</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Anti-Freeze Tech</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Instant Activation</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>24/7 Support</li>
+                        </ul>
+                        <div class="text-center pb-6 px-4">
+                            <a href="order.html"><button class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-full w-full transition-all duration-300 btn-hover-effect">
+                                Great Value
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 1 Year Plan -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 p-4 animate__animated animate__fadeInRight" data-animate-order="4">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 card-hover-effect h-full relative">
+                        <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                            BEST DEAL
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-800 to-blue-900 text-white text-center py-4">
+                            <h2 class="text-xl font-bold">1 YEAR</h2>
+                            <p class="text-sm">Digital Store Premium</p>
+                            <p class="text-sm">Free Trial available (4 Hours)</p>
+                        </div>
+                        <div class="text-center py-6 px-4">
+                            <p class="text-4xl font-bold text-blue-600">$200</p>
+                            <!-- <p class="line-through text-gray-500 text-sm">$99</p> -->
+                            <p class="text-gray-600 text-sm mt-2">Save $40</p>
+                        </div>
+                        <ul class="text-left px-6 pb-6">
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>20,000+ Channels</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>40,000+ VODs</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>4K/FHD/HD Quality</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>TV Guide (EPG)</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Anti-Freeze Tech</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>Instant Activation</li>
+                            <li class="flex items-center py-2"><i class="fas fa-check text-green-500 mr-2"></i>24/7 Support</li>
+                        </ul>
+                        <div class="text-center pb-6 px-4">
+                            <a href="order.html"><button class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-full w-full transition-all duration-300 btn-hover-effect">
+                                Best Savings
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 max-w-3xl mx-auto bg-blue-50 rounded-xl p-6 animate__animated animate__fadeIn">
+                <h3 class="text-xl font-bold text-blue-900 mb-2">7-Day Money Back Guarantee</h3>
+                <p class="text-gray-700">We're confident you'll love our service. If you're not completely satisfied within the first 7 days, we'll refund your payment, no questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channels Section -->
+    <section class="py-16 bg-blue-900 text-white" id="channels">
+        <div class="container mx-auto px-4">
+            <div class="bg-blue-800 p-8 rounded-xl shadow-2xl animate__animated animate__fadeIn">
+                <h1 class="text-3xl font-bold mb-6">
+                    Digital Store <span class="gradient-text">Channels</span>
+                </h1>
+                <p class="mb-6 text-lg">
+                    Whether you're a sports fanatic, movie buff, or just looking for some general entertainment, Digital Store has got you covered. With over 20,000 channels available from all around the world, there's something for everyone.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span>USA HD (Full) sports channels, movies and children</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span>UK HD channels (Full) sports movies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span>Canada HD (Full) sports channels, movies and children</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span>Europe HD (Full) sports channels and movies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mt-1 mr-2"></i>
+                                <span>Other 140+ Bouquet (Full) sports, movies and children</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex justify-center items-center">
+                        <img alt="A digital world map with interconnected nodes representing global IPTV channels" class="rounded-lg shadow-lg w-full max-w-md animate-float" src="https://storage.googleapis.com/a1aa/image/KFsVWZKvJUfkXFFsJxfw3t8yzCkRGz5Xwlopx3h311E.jpg"/>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-blue-700/50 p-6 rounded-lg backdrop-blur-sm card-hover-effect">
+                        <h2 class="text-xl font-bold mb-3 text-center">
+                            <i class="fas fa-child mr-2 text-blue-300"></i> Digital Store KIDS
+                        </h2>
+                        <p class="text-center">
+                            Your Go-To Family-Friendly <span class="text-blue-300 font-medium">IPTV</span>. Enjoy a diverse range of kid-friendly content from animated series to educational shows.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-blue-700/50 p-6 rounded-lg backdrop-blur-sm card-hover-effect">
+                        <h2 class="text-xl font-bold mb-3 text-center">
+                            <i class="fas fa-newspaper mr-2 text-blue-300"></i> Digital Store NEWS
+                        </h2>
+                        <p class="text-center">
+                            Explore global news on Digital Store – top channels from USA, UK, Canada, Europe, and more. Stay informed worldwide.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-blue-700/50 p-6 rounded-lg backdrop-blur-sm card-hover-effect">
+                        <h2 class="text-xl font-bold mb-3 text-center">
+                            <i class="fas fa-film mr-2 text-blue-300"></i> Digital Store MOVIES
+                        </h2>
+                        <p class="text-center">
+                            Unlimited access to the latest blockbusters, classics, and exclusive content from around the world in stunning quality.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-10">
+                    <a class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full inline-flex items-center btn-hover-effect transition-all duration-300 animate-pulse-cta" href="#pricing">
+                        <i class="fas fa-crown mr-2"></i> Join Digital Store Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white" id="why-us">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold text-center mb-4 animate__animated animate__fadeIn">Why Choose Digital Store</h1>
+            <h2 class="text-2xl font-bold text-blue-900 text-center mb-12 animate__animated animate__fadeIn">8 Reasons We're The Best IPTV Provider</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="1">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-rocket text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">FAST DELIVERY</h3>
+                    </div>
+                    <p>Instant activation after purchase. Get your login details within minutes and start streaming immediately.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="2">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-satellite-dish text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">20,000+ CHANNELS</h3>
+                    </div>
+                    <p>Massive selection covering all categories - sports, news, movies, kids, and international content.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="3">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-video text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">40,000+ VODs</h3>
+                    </div>
+                    <p>Huge library of movies, TV series, documentaries, and special content available on demand.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="4">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-mobile-alt text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">ALL DEVICES</h3>
+                    </div>
+                    <p>Compatible with Smart TVs, Android, iOS, Firestick, MAG boxes, and more. One subscription, multiple devices.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="5">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-shield-alt text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">7-DAY GUARANTEE</h3>
+                    </div>
+                    <p>Try risk-free with our money-back guarantee if you're not completely satisfied.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="6">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-tv text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">4K/FHD QUALITY</h3>
+                    </div>
+                    <p>Crystal clear picture quality with many channels available in 4K Ultra HD and Full HD.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="7">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-headset text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">24/7 SUPPORT</h3>
+                    </div>
+                    <p>Dedicated support team available around the clock via WhatsApp, email, and live chat.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border border-blue-100 rounded-lg transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInUp" data-animate-order="8">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-sync-alt text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">FREE UPDATES</h3>
+                    </div>
+                    <p>Automatic weekly updates with new channels and content at no additional cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate__animated animate__fadeIn">
+                <h1 class="text-3xl font-bold mb-4">What Will You Get With Digital Store?</h1>
+                <p class="text-xl text-blue-200 max-w-3xl mx-auto">Unlock a world of entertainment with your Digital Store subscription</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="space-y-4 animate__animated animate__fadeInLeft">
+                    <div class="bg-blue-800 p-5 rounded-lg flex justify-between items-center transform transition-all duration-300 hover:bg-blue-700 card-hover-effect">
+                        <span class="text-lg">
+                            <i class="fas fa-star text-yellow-300 mr-2"></i> All your favorite TV in one place
+                        </span>
+                        <i class="fas fa-chevron-right text-blue-300"></i>
+                    </div>
+                    
+                    <div class="bg-blue-800 p-5 rounded-lg flex justify-between items-center transform transition-all duration-300 hover:bg-blue-700 card-hover-effect">
+                        <span class="text-lg">
+                            <i class="fas fa-futbol text-green-300 mr-2"></i> All Sports channels & categories
+                        </span>
+                        <i class="fas fa-chevron-right text-blue-300"></i>
+                    </div>
+                    
+                    <div class="bg-blue-800 p-5 rounded-lg flex justify-between items-center transform transition-all duration-300 hover:bg-blue-700 card-hover-effect">
+                        <span class="text-lg">
+                            <i class="fas fa-film text-purple-300 mr-2"></i> Online cinema on all devices
+                        </span>
+                        <i class="fas fa-chevron-right text-blue-300"></i>
+                    </div>
+                    
+                    <div class="bg-blue-800 p-5 rounded-lg flex justify-between items-center transform transition-all duration-300 hover:bg-blue-700 card-hover-effect">
+                        <span class="text-lg">
+                            <i class="fas fa-tv text-red-300 mr-2"></i> Latest seasons of popular shows
+                        </span>
+                        <i class="fas fa-chevron-right text-blue-300"></i>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center items-center animate__animated animate__fadeInRight">
+                    <img alt="Family watching TV on a couch" class="rounded-xl shadow-2xl w-full max-w-md" src="https://storage.googleapis.com/a1aa/image/Z5WuUVGXlTS_mdBvOo1Vmov5VkHyYMF-noD_NKCU2es.jpg"/>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#pricing" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 btn-hover-effect animate-pulse-cta">
+                    <i class="fas fa-gem mr-2"></i> Start Your Premium Experience
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50" id="testimonials">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4 animate__animated animate__fadeIn">
+                What Our <span class="gradient-text">Customers Say</span>
+            </h1>
+            <p class="text-lg text-blue-800 mb-12 max-w-2xl mx-auto animate__animated animate__fadeIn">
+                Don't just take our word for it. Here's what our subscribers have to say about their Digital Store experience.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-8 rounded-xl shadow-md transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInLeft">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold text-lg">John Doe</p>
+                            <p class="text-gray-500 text-sm">Canada</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Digital Store's seamless compatibility across devices is impressive. Whether on a smart TV, laptop, or mobile, the transition is smooth. The picture quality is outstanding, and I've had zero buffering issues even during big sports events. Best IPTV service I've tried!"
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md transform transition-all duration-300 hover:shadow-lg card-hover-effect animate__animated animate__fadeInRight">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Taylor" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold text-lg">Sarah Taylor</p>
+                            <p class="text-gray-500 text-sm">United States</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The selection of channels is incredible and the streaming quality is excellent. I love having access to international channels from my home country. Customer support is responsive and helpful. I'm very happy with the service of Digital Store and have recommended it to all my friends."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center space-x-2">
+                <button class="w-3 h-3 rounded-full bg-blue-500"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300"></button>
+            </div>
+            
+            <div class="mt-12 bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto animate__animated animate__fadeInUp">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">Ready to join thousands of happy customers?</h3>
+                <p class="text-gray-700 mb-6">Sign up today and experience the best in IPTV entertainment. With our 7-day money-back guarantee, you've got nothing to lose!</p>
+                <a href="#pricing" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 btn-hover-effect">
+                    Get Started Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white" id="faq">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold text-center mb-4 animate__animated animate__fadeIn">Frequently Asked Questions</h1>
+            <p class="text-xl text-blue-900 text-center mb-12 max-w-2xl mx-auto animate__animated animate__fadeIn">Get answers to common questions about Digital Store</p>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate__animated animate__fadeInUp" data-animate-order="1">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 text-left">
+                        <span class="font-medium">What is IPTV and how does it work?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-700">
+                            IPTV (Internet Protocol Television) delivers television content over the internet instead of traditional terrestrial, satellite, or cable formats. With Digital Store, you can stream live TV channels and on-demand content directly to your device using our app or compatible media player. All you need is a stable internet connection.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate__animated animate__fadeInUp" data-animate-order="2">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 text-left">
+                        <span class="font-medium">What devices are supported?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-700 mb-2">
+                            Digital Store works with virtually all modern devices including:
+                        </p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Smart TVs (Samsung, LG, Android TV)</li>
+                            <li>Streaming devices (Fire TV Stick, Android Box, Apple TV, Roku)</li>
+                            <li>Mobile devices (Android phones/tablets, iPhone, iPad)</li>
+                            <li>Computers (Windows, Mac, Linux via web browser)</li>
+                            <li>IPTV boxes (MAG, Formuler, BuzzTV)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate__animated animate__fadeInUp" data-animate-order="3">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 text-left">
+                        <span class="font-medium">What internet speed do I need?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-700">
+                            We recommend a minimum of 10 Mbps for SD quality, 25 Mbps for HD, and 50+ Mbps for 4K streaming. For optimal performance, use a wired Ethernet connection when possible, especially for 4K content. Multiple simultaneous streams will require higher bandwidth.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate__animated animate__fadeInUp" data-animate-order="4">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 text-left">
+                        <span class="font-medium">How many devices can I use simultaneously?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-700">
+                            Our standard subscription allows for 2 simultaneous connections. We offer upgraded plans with more connections if needed. You can use the same account on unlimited devices, but only the allowed number can stream at the same time.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate__animated animate__fadeInUp" data-animate-order="5">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 text-left">
+                        <span class="font-medium">Do you offer a free trial?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-700">
+                            While we don't offer free trials due to abuse, we provide a 7-day money-back guarantee. If you're not completely satisfied with our service within the first week, we'll refund your payment in full, no questions asked.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate__animated animate__fadeInUp" data-animate-order="6">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 text-left">
+                        <span class="font-medium">How do I set up Digital Store on my device?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-4 hidden">
+                        <p class="text-gray-700 mb-2">
+                            Setup is quick and easy:
+                        </p>
+                        <ol class="list-decimal pl-5 space-y-1">
+                            <li>Purchase your subscription</li>
+                            <li>Receive login details via email</li>
+                            <li>Download our app or use a compatible player</li>
+                            <li>Enter your credentials</li>
+                            <li>Start streaming!</li>
+                        </ol>
+                        <p class="mt-2 text-gray-700">
+                            We provide detailed setup guides for all supported devices and our support team is available 24/7 to assist if needed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg mb-6">Still have questions? Our support team is ready to help!</p>
+                <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 btn-hover-effect">
+                    <i class="fas fa-headset mr-2"></i> Contact Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 animate__animated animate__fadeIn">Ready to Transform Your TV Experience?</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto animate__animated animate__fadeIn">Join thousands of satisfied customers enjoying premium IPTV service at an unbeatable price.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate__animated animate__fadeInUp">
+                <a href="#pricing" class="bg-white hover:bg-gray-100 text-blue-800 font-bold py-4 px-8 rounded-full transition-all duration-300 btn-hover-effect">
+                    <i class="fas fa-crown mr-2"></i> Choose Your Plan
+                </a>
+                <a href="#" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 text-white font-bold py-4 px-8 rounded-full transition-all duration-300">
+                    <i class="fas fa-question-circle mr-2"></i> Need Help?
+                </a>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto animate__animated animate__fadeIn">
+                <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">20K+</div>
+                    <div class="text-sm">Channels</div>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">40K+</div>
+                    <div class="text-sm">VOD Titles</div>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">99.9%</div>
+                    <div class="text-sm">Uptime</div>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">24/7</div>
+                    <div class="text-sm">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <p class="mb-4">Premium IPTV service with 20,000+ channels and 40,000+ VODs. The best streaming experience at an affordable price.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="#channels" class="hover:text-blue-300 transition-colors duration-300">Channels</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-300 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-blue-300 transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/contact.html" class="hover:text-blue-300 transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="/tutorials.html" class="hover:text-blue-300 transition-colors duration-300">Setup Guides</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-blue-300"></i>
+                            <span>ayukblaisius@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2 text-blue-300"></i>
+                            <span>N/A</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-2 text-blue-300"></i>
+                            <span>24/7 Support Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>© 2025 Digital Store. All rights reserved. Powered by Digital Store</p>
+                <p class="text-sm text-blue-300 mt-2">Disclaimer: Digital Store is not responsible for any copyright issues. All content is provided by third parties.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('rotate-180');
+                } else {
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('[data-animate-order]');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    const order = element.getAttribute('data-animate-order');
+                    element.classList.add(`animate__fadeInUp`);
+                    element.style.animationDelay = `${order * 0.1}s`;
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

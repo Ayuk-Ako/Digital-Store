@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store - Channel List</title>
+     <!-- Preload important resources -->
+     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+     
+     <!-- CSS -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom styles */
+        .channel-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .category-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .channel-logo {
+            height: 60px;
+            object-fit: contain;
+        }
+        .country-flag {
+            width: 24px;
+            height: 16px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        .search-box:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center animate__animated animate__fadeInLeft">
+                <img alt="Digital Store Logo" class="h-10 transform hover:scale-110 transition-transform duration-300" height="50" src="https://storage.googleapis.com/a1aa/image/OqWzJFVjbJR7hGod_v_XyvD4yKZBCJ9zb_3upRaaC48.jpg" width="50"/>
+                <span class="ml-2 text-xl font-bold gradient-text">
+                    DIGITAL STORE
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-6 animate__animated animate__fadeInDown">
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="index.html">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="channels.html">
+                    Channels
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="faq.html">
+                    FAQ
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="tutorials.html">
+                    Tutorials
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="#contact">
+                    Contact US
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 btn-hover-effect animate__animated animate__fadeInRight animate-pulse-cta" href="#">
+                <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-blue-800 px-4 py-2" id="mobile-menu">
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="index.html">Home</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="channels.html">Channels</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="faq.html">FAQ</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="tutorials.html">Tutorials</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="contact.html">Contact US</a>
+        </div>
+    </header>
+
+    <!-- Channel List Hero -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-16">
+        <div class="container mx-auto px-6 text-center animate__animated animate__fadeIn">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">20,000+ Premium Channels</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Enjoy the best live TV experience with our extensive channel lineup from around the world</p>
+            
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" placeholder="Search channels..." 
+                    class="w-full py-4 px-6 rounded-full text-gray-800 focus:outline-none shadow-lg search-box">
+                <button class="absolute right-2 top-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Categories -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="container mx-auto px-6 overflow-x-auto">
+            <div class="flex space-x-2 min-w-max">
+                <button class="category-btn active px-6 py-2 rounded-full bg-blue-500 text-white transition">
+                    All Channels
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-futbol mr-2"></i> Sports
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-film mr-2"></i> Movies
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-newspaper mr-2"></i> News
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-child mr-2"></i> Kids
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-globe-americas mr-2"></i> International
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-music mr-2"></i> Music
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="fas fa-utensils mr-2"></i> Lifestyle
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Country Filter -->
+    <section class="py-4 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center">
+                <span class="mr-4 font-medium">Filter by Country:</span>
+                <div class="flex space-x-2 overflow-x-auto pb-2">
+                    <button class="country-filter active px-4 py-1 rounded-full bg-blue-500 text-white text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-2"> All
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-2"> USA
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/gb.png" class="country-flag mr-2"> UK
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/ca.png" class="country-flag mr-2"> Canada
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/au.png" class="country-flag mr-2"> Australia
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/fr.png" class="country-flag mr-2"> France
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/de.png" class="country-flag mr-2"> Germany
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/it.png" class="country-flag mr-2"> Italy
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/es.png" class="country-flag mr-2"> Spain
+                    </button>
+                    <button class="country-filter px-4 py-1 rounded-full bg-white hover:bg-gray-200 text-sm flex items-center">
+                        <img src="https://flagcdn.com/w20/ae.png" class="country-flag mr-2"> Arabic
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Grid -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold">Popular Channels</h2>
+                <div class="flex items-center">
+                    <span class="mr-2">Sort by:</span>
+                    <select class="border rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        <option>Most Popular</option>
+                        <option>A-Z</option>
+                        <option>Z-A</option>
+                        <option>Recently Added</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+                <!-- Channel Card 1 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/ESPN-Logo.png" alt="ESPN" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">ESPN</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Sports</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 2 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/HBO-Logo.png" alt="HBO" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">HBO</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Movies</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 3 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/08/BBC-Logo.png" alt="BBC" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">BBC One</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/gb.png" class="country-flag mr-1">
+                        <span>Entertainment</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 4 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/CNN-Logo.png" alt="CNN" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">CNN</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>News</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 5 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/Discovery-Channel-Logo.png" alt="Discovery" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">Discovery</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Documentary</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 6 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/Nickelodeon-Logo.png" alt="Nickelodeon" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">Nickelodeon</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Kids</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 7 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/Sky-Sports-Logo.png" alt="Sky Sports" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">Sky Sports</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/gb.png" class="country-flag mr-1">
+                        <span>Sports</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 8 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/National-Geographic-Logo.png" alt="Nat Geo" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">Nat Geo</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Documentary</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 9 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/FOX-Logo.png" alt="FOX" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">FOX</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Entertainment</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 10 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/Cartoon-Network-Logo.png" alt="Cartoon Network" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">Cartoon Network</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Kids</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 11 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/MTV-Logo.png" alt="MTV" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">MTV</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Music</span>
+                    </div>
+                </div>
+
+                <!-- Channel Card 12 -->
+                <div class="channel-card bg-white rounded-lg shadow-md p-4 text-center animate__animated animate__fadeIn">
+                    <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/11/Star-Movies-Logo.png" alt="Star Movies" class="channel-logo mx-auto">
+                    </div>
+                    <h3 class="font-bold mb-1">Star Movies</h3>
+                    <div class="flex justify-center items-center text-sm text-gray-600">
+                        <img src="https://flagcdn.com/w20/us.png" class="country-flag mr-1">
+                        <span>Movies</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <nav class="flex items-center space-x-2">
+                    <button class="px-3 py-1 rounded border hover:bg-gray-100">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="px-3 py-1 rounded bg-blue-500 text-white">1</button>
+                    <button class="px-3 py-1 rounded border hover:bg-gray-100">2</button>
+                    <button class="px-3 py-1 rounded border hover:bg-gray-100">3</button>
+                    <span class="px-2">...</span>
+                    <button class="px-3 py-1 rounded border hover:bg-gray-100">10</button>
+                    <button class="px-3 py-1 rounded border hover:bg-gray-100">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Packages -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-8 text-center">Channel Packages</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Package 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden animate__animated animate__fadeInUp">
+                    <div class="bg-blue-600 text-white p-4 text-center">
+                        <h3 class="text-xl font-bold">USA Package</h3>
+                        <p class="text-blue-100">300+ Channels</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>All major US networks</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Regional sports networks</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Premium movie channels</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>News & entertainment</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded transition">
+                            View Channels
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden animate__animated animate__fadeInUp">
+                    <div class="bg-blue-700 text-white p-4 text-center">
+                        <h3 class="text-xl font-bold">UK Package</h3>
+                        <p class="text-blue-100">250+ Channels</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>BBC, ITV, Channel 4, Sky</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Premier League & sports</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>British movie channels</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>News & documentaries</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded transition">
+                            View Channels
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden animate__animated animate__fadeInUp">
+                    <div class="bg-blue-800 text-white p-4 text-center">
+                        <h3 class="text-xl font-bold">International Package</h3>
+                        <p class="text-blue-100">500+ Channels</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Channels from 50+ countries</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>European, Asian, Arabic</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>International sports</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>News in multiple languages</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded transition">
+                            View Channels
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">Ready to Access All These Channels?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe now and enjoy unlimited entertainment from around the world</p>
+            <a href="/subscribe" class="inline-block bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-full transition">
+                Subscribe Now <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <p class="mb-4">Premium IPTV service with 20,000+ channels and 40,000+ VODs. The best streaming experience at an affordable price.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="#channels" class="hover:text-blue-300 transition-colors duration-300">Channels</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-300 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-blue-300 transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/contact.html" class="hover:text-blue-300 transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="/tutorials.html" class="hover:text-blue-300 transition-colors duration-300">Setup Guides</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-blue-300"></i>
+                            <span>ayukblaisius@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2 text-blue-300"></i>
+                            <span>N/A</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-2 text-blue-300"></i>
+                            <span>24/7 Support Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>© 2025 Digital Store. All rights reserved. Powered by Digital Store</p>
+                <p class="text-sm text-blue-300 mt-2">Disclaimer: Digital Store is not responsible for any copyright issues. All content is provided by third parties.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        // Category filter
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.category-btn.active').classList.remove('active', 'bg-blue-500', 'text-white');
+                document.querySelector('.category-btn.active').classList.add('bg-gray-100', 'hover:bg-gray-200');
+                btn.classList.add('active', 'bg-blue-500', 'text-white');
+                btn.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+            });
+        });
+
+        // Country filter
+        document.querySelectorAll('.country-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.country-filter.active').classList.remove('active', 'bg-blue-500', 'text-white');
+                document.querySelector('.country-filter.active').classList.add('bg-white', 'hover:bg-gray-200');
+                btn.classList.add('active', 'bg-blue-500', 'text-white');
+                btn.classList.remove('bg-white', 'hover:bg-gray-200');
+            });
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate__animated');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add(element.getAttribute('class').split(' ')[1]);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store - Tutorials</title>
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+    
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom styles */
+        .tutorial-card {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .download-btn {
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .device-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #3b82f6;
+            bottom: -10px;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center animate__animated animate__fadeInLeft">
+                <img alt="Digital Store Logo" class="h-10 transform hover:scale-110 transition-transform duration-300" height="50" src="https://storage.googleapis.com/a1aa/image/OqWzJFVjbJR7hGod_v_XyvD4yKZBCJ9zb_3upRaaC48.jpg" width="50"/>
+                <span class="ml-2 text-xl font-bold gradient-text">
+                    DIGITAL STORE
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-6 animate__animated animate__fadeInDown">
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="index.html">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="channels.html">
+                    Channels
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="faq.html">
+                    FAQ
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="tutorials.html">
+                    Tutorials
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-blue-300 transition-colors duration-300 relative group" href="#contact">
+                    Contact US
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-300 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 btn-hover-effect animate__animated animate__fadeInRight animate-pulse-cta" href="https://wa.me/237651644490" target="_blank">
+    <i class="fab fa-whatsapp mr-2"></i> WhatsApp US
+</a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-blue-800 px-4 py-2" id="mobile-menu">
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="index.html">Home</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="channels.html">Channels</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="faq.html">FAQ</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="tutorials.html">Tutorials</a>
+            <a class="block py-2 text-white hover:text-blue-300 transition-colors duration-300" href="contact.html">Contact US</a>
+        </div>
+    </header>
+
+    <!-- Tutorials Hero Section -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20">
+        <div class="container mx-auto px-6 text-center animate__animated animate__fadeIn">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Device Setup Tutorials</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Step-by-step guides to install Digital Store on your devices</p>
+        </div>
+    </section>
+
+    <!-- Tutorial Packages Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Download Tutorials</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Select your device to download the complete installation guide</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Android TV Box -->
+                <div class="tutorial-card bg-white rounded-lg shadow-md border border-gray-200 animate__animated animate__fadeIn">
+                    <div class="p-6 text-center">
+                        <div class="device-icon text-green-500">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Android TV Box</h3>
+                        <p class="text-gray-600 mb-4">Installation guide for all Android TV devices</p>
+                        <a href="How to install digital store.zip" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg download-btn" download="android-tv-tutorial.zip">
+                            <i class="fas fa-download mr-2"></i> Download Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Amazon Fire TV Stick -->
+                <div class="tutorial-card bg-white rounded-lg shadow-md border border-gray-200 animate__animated animate__fadeIn">
+                    <div class="p-6 text-center">
+                        <div class="device-icon text-orange-500">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Amazon Fire TV Stick</h3>
+                        <p class="text-gray-600 mb-4">Complete Firestick installation tutorial</p>
+                        <a href="How to install digital store.zip" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg download-btn" download="firestick-tutorial.zip">
+                            <i class="fas fa-download mr-2"></i> Download Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Smart TV -->
+                <div class="tutorial-card bg-white rounded-lg shadow-md border border-gray-200 animate__animated animate__fadeIn">
+                    <div class="p-6 text-center">
+                        <div class="device-icon text-blue-500">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Smart TV</h3>
+                        <p class="text-gray-600 mb-4">Setup for Samsung, LG and other Smart TVs</p>
+                        <a href="How to install digital store.zip" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg download-btn" download="smart-tv-tutorial.zip">
+                            <i class="fas fa-download mr-2"></i> Download Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- MAG Box -->
+                <div class="tutorial-card bg-white rounded-lg shadow-md border border-gray-200 animate__animated animate__fadeIn">
+                    <div class="p-6 text-center">
+                        <div class="device-icon text-purple-500">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">MAG Box</h3>
+                        <p class="text-gray-600 mb-4">Configuration for MAG devices</p>
+                        <a href="How to install digital store.zip" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg download-btn" download="mag-tutorial.zip">
+                            <i class="fas fa-download mr-2"></i> Download Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- iOS Devices -->
+                <div class="tutorial-card bg-white rounded-lg shadow-md border border-gray-200 animate__animated animate__fadeIn">
+                    <div class="p-6 text-center">
+                        <div class="device-icon text-gray-700">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">iPhone/iPad</h3>
+                        <p class="text-gray-600 mb-4">Installation for Apple devices</p>
+                        <a href="How to install digital store.zip" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg download-btn" download="ios-tutorial.zip">
+                            <i class="fas fa-download mr-2"></i> Download Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Windows PC -->
+                <div class="tutorial-card bg-white rounded-lg shadow-md border border-gray-200 animate__animated animate__fadeIn">
+                    <div class="p-6 text-center">
+                        <div class="device-icon text-blue-600">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Windows PC</h3>
+                        <p class="text-gray-600 mb-4">Setup guide for Windows computers</p>
+                        <a href="How to install digital store.zip" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg download-btn" download="windows-tutorial.zip">
+                            <i class="fas fa-download mr-2"></i> Download Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Video Tutorials</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Watch our step-by-step video guides</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/example1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Firestick Installation Guide</h3>
+                        <p class="text-gray-600">Complete walkthrough for installing on Fire TV Stick</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/example2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Android TV Box Setup</h3>
+                        <p class="text-gray-600">How to install on any Android TV device</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="border-b border-gray-200 py-4">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-lg">
+                        <span>How do I install on my device?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>Download the appropriate tutorial for your device from the list above. Each package contains detailed instructions and screenshots to guide you through the installation process.</p>
+                    </div>
+                </div>
+                
+                <div class="border-b border-gray-200 py-4">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-lg">
+                        <span>What devices are supported?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>We support Android TV boxes, Amazon Fire TV Stick, Smart TVs (Samsung, LG), MAG boxes, iOS devices, and Windows PCs. If your device isn't listed, contact our support team.</p>
+                    </div>
+                </div>
+                
+                <div class="border-b border-gray-200 py-4">
+                    <button class="flex justify-between items-center w-full text-left font-medium text-lg">
+                        <span>Do I need technical knowledge to install?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>Our tutorials are designed for beginners with step-by-step instructions. No technical knowledge is required, just follow the guide carefully.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support CTA -->
+    <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-600 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">Need Help With Installation?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Our support team is available 24/7 to assist you</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/contact" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-full transition">
+                    <i class="fas fa-headset mr-2"></i> Contact Support
+                </a>
+                <a href="/faq" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition">
+                    <i class="fas fa-question-circle mr-2"></i> Visit FAQ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <p class="mb-4">Premium IPTV service with 20,000+ channels and 40,000+ VODs. The best streaming experience at an affordable price.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="#channels" class="hover:text-blue-300 transition-colors duration-300">Channels</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-300 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-blue-300 transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/contact.html" class="hover:text-blue-300 transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="/tutorials.html" class="hover:text-blue-300 transition-colors duration-300">Setup Guides</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-blue-300"></i>
+                            <span>ayukblaisius@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2 text-blue-300"></i>
+                            <span>N/A</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-2 text-blue-300"></i>
+                            <span>24/7 Support Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>© 2025 Digital Store. All rights reserved. Powered by Digital Store</p>
+                <p class="text-sm text-blue-300 mt-2">Disclaimer: Digital Store is not responsible for any copyright issues. All content is provided by third parties.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        // FAQ accordion functionality
+        document.querySelectorAll('.border-b button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Animation effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const tutorialCards = document.querySelectorAll('.tutorial-card');
+            
+            tutorialCards.forEach((card, index) => {
+                // Stagger animations
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
